@@ -1,4 +1,4 @@
-package edu.kh.jsp.controller;
+package edu.kh.jsp2.controller;
 
 import java.io.IOException;
 
@@ -9,20 +9,20 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-// @WebServlet() 소괄호 안쪽읜 문자열 == 매핑될 주소
-// ** 주소 작성 시 반드시 맨 앞에 "/" 로 시작해야함 **
-@WebServlet("/el_jstl")
-public class ElJstlServlet extends HttpServlet{
+
+@WebServlet("/el/test1")
+public class ELTestServlet1 extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
 		
-		// 1) JSP 경로 (webapp 폴더 기준)
-		String path = "/WEB-INF/views/el_jstl.jsp";
-		
-		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
+		// 요청처리
+		// -------
+		// 응답처리
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/el/test1.jsp");
 		
 		dispatcher.forward(req, resp);
+		
 	}
 }

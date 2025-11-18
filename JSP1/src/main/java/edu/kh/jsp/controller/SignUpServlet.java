@@ -9,20 +9,22 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-// @WebServlet() 소괄호 안쪽읜 문자열 == 매핑될 주소
-// ** 주소 작성 시 반드시 맨 앞에 "/" 로 시작해야함 **
-@WebServlet("/el_jstl")
-public class ElJstlServlet extends HttpServlet{
+
+@WebServlet("/signUp")
+public class SignUpServlet extends HttpServlet{
 	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
 		
-		// 1) JSP 경로 (webapp 폴더 기준)
-		String path = "/WEB-INF/views/el_jstl.jsp";
+		// 요청에 대한 별도 처리 없이 바로 JSP 로 요청 ㅜ이임
 		
+		// 1) 요청 위임할 JSP 경로 지정 (webapp 폴더 기준)
+		String path = "WEB-INF/views/signup_result.jsp";
+		// 2) 요청을 위임시켜줄 객체 얻어오기 (요청 발송자)
 		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 		
+		// 3) JSP에게 요청 위임하기 (req, resp)
 		dispatcher.forward(req, resp);
 	}
 }
