@@ -38,6 +38,19 @@
 	<%-- a태그 클릭시 /el/scope 주소로 GET 방식 요청을 하겠다 --%>
 		<a href="/el/scope">Servlet/JSP 범위(scope)별 내장 객체 + EL 사용법</a>
 	</h1>
+	
+	<hr>
+	
+	<h1>
+		<a href="/jstl/test">JSTL 다뤄보기</a>
+	</h1>
+
+	<hr>
+	
+	<h1>
+		<a href="/book/list">책 목록 조회하기</a>
+	</h1>
+
 
 </body>
 </html>
