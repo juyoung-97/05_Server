@@ -7,6 +7,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+<<<<<<< HEAD
 	<title> 상세 조회</title>
 </head>
 <body>
@@ -17,14 +18,39 @@
 
 	<div class="complete">
 		완료 여부 :
+=======
+	<title>${todo.todoTitle} 상세 조회</title>
+	<link rel="stylesheet" href="/resources/css/detail.css">
+</head>
+<body>
+
+	<h1>${todo.todoTitle}</h1>
+
+	<div class="complete">
+		완료 여부 :
+		<c:if test="${todo.todoComplete}">
+			<span class="green">O</span>
+		</c:if>
+		
+		<c:if test="${not todo.todoComplete}">
+			<span class="red">X</span>
+		</c:if>
+>>>>>>> 5995733 (TodoList)
 		
 	</div>
 
 	<div>
+<<<<<<< HEAD
 		작성일 : 
 	</div>
 
 	<div class="content"></div>
+=======
+		작성일 : ${todo.regDate}
+	</div>
+
+	<div class="content">${todo.todoDetail}</div>
+>>>>>>> 5995733 (TodoList)
 	
 	<div class="btn-container">
 		<div>
@@ -38,6 +64,27 @@
 		</div>
 	</div>
 	
+<<<<<<< HEAD
+=======
+	<%-- session 범위에 message 가 있는 경우 --%>
+	<c:if test="${not empty sessionScope.message}">
+		<script>
+			// JS 영역
+			alert("${message}");
+			// JSP 해석 순위
+			// 1순위 : Java(EL/JSTL)
+			// 2순위 : Front(HTML/CSS/JS)
+		</script>
+		
+		<%-- message를 한 번만 사용하고 제거 --%>
+		<c:remove var="message" scope="session" />
+	</c:if>
+	
+	
+	
+	
+	<script src="/resources/js/detail.js"></script>
+>>>>>>> 5995733 (TodoList)
 	
 	
 </body>

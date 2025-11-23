@@ -16,6 +16,7 @@ import jakarta.servlet.http.HttpServletResponse;
 // "/main" 요청을 매핑하여 처리하는 서블릿
 @WebServlet("/main")
 public class MainServlet extends HttpServlet{
+<<<<<<< HEAD
 
 	// 왜 index.jsp 에서 메인페이지 코드를 작성하지 않고
 	// /main 요청을 처리하는 서블릿을 만들었는가?
@@ -31,11 +32,30 @@ public class MainServlet extends HttpServlet{
 		// 요청 -> Controller -> Service -> DAO -> DB
 		// 응답 <- views(jsp) <-		 <-		<-
 		
+=======
+	
+	// 왜 index.jsp에서 메인페이지 코드를 작성하지 않고
+	// /main 요청을 처리하는 서블릿을 만들었는가?
+	
+	// -> Servlet(Java 코드 <-> DB)에서 추가한(DB에서 조회한) 데이터를
+	// 메인페이지에서부터 사용할 수 있게 하기 위해
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		// DB에 갔다오는 일!
+		// 요청 -> Controller(Servlet) -> Service -> DAO -> DB 
+		// 응답 <-	views(jsp) <-		<-		<-
+>>>>>>> 5995733 (TodoList)
 		try {
 			
 			TodoListService service = new TodoListServiceImpl();
 			
+<<<<<<< HEAD
 			// 전체 할 일 목록 + 완료된 Todo 갯수 
+=======
+			// 전체 할 일 목록 + 완료된 Todo 갯수
+>>>>>>> 5995733 (TodoList)
 			Map<String, Object> map = service.todoListFullView();
 			
 			// Map 에 저장된 값 풀어내기
@@ -46,6 +66,7 @@ public class MainServlet extends HttpServlet{
 			req.setAttribute("todoList", todoList);
 			req.setAttribute("completeCount", completeCount);
 			
+<<<<<<< HEAD
 			// 메인페이지 응답을 담당하는 JSP 에 요청 위임
 			req.getRequestDispatcher("/WEB-INF/views/main.jsp")
 			.forward(req, resp);
@@ -53,12 +74,27 @@ public class MainServlet extends HttpServlet{
 			
 			
 			
+=======
+			// 메인페이지 응답을 담당하는 JSP에 요청 위임
+			req.getRequestDispatcher("/WEB-INF/views/main.jsp")
+			.forward(req, resp);
+			
+>>>>>>> 5995733 (TodoList)
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		
+<<<<<<< HEAD
 		
 		
 	}
+=======
+	}
+	
+	
+	
+	
+	
+>>>>>>> 5995733 (TodoList)
 }
